@@ -37,6 +37,7 @@ set ANDROID_NDK_HOME=C:\Program Files (x86)\android-ndk-r10”
 http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Download RubyInstaller from http://rubyinstaller.org/downloads/ and install
 •	Download rubygems from https://rubygems.org/pages/download and install
+•	clone wme-jenkins docs from git@sqbu-github.cisco.com:qianden/wme-jenkins.git and copy scripts/junit.rb and scripts/rerun.rb to C:\Ruby193\lib\ruby\gems\1.9.1\gems\cucumber-1.3.17\lib\cucumber\formatter in order to get tag information in rerun and test reports
 
 8.	Python and debug tool environment
 •	Download python2.7 from https://www.python.org/downloads/release/python-279/ and install
@@ -53,3 +54,4 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Remember to add git path under tool chain
 •	Set usage as used by tied jobs only
 •	Recommand to use "Java Web Start" to launch windows slave
+
