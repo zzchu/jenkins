@@ -1,242 +1,64 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
-{\fonttbl\f0\fnil\fcharset0 Cambria;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\ftech\fcharset77 Symbol;
-\f3\fnil\fcharset0 AndaleMono;\f4\fmodern\fcharset0 Courier;\f5\fnil\fcharset0 Monaco;
-\f6\froman\fcharset0 Times-Roman;\f7\fmodern\fcharset0 CourierNewPSMT;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red193\green101\blue28;\red46\green174\blue187;
-\red200\green20\blue201;\red47\green255\blue18;\red75\green75\blue75;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
-{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
-{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
-{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}
-{\list\listtemplateid5\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid5}
-{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
-{\list\listtemplateid7\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid601\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid7}
-{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid701\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid8}
-{\list\listtemplateid9\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid801\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid9}
-{\list\listtemplateid10\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid901\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid10}
-{\list\listtemplateid11\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1001\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid11}
-{\list\listtemplateid12\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid12}
-{\list\listtemplateid13\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid13}
-{\list\listtemplateid14\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid14}
-{\list\listtemplateid15\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid15}
-{\list\listtemplateid16\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid16}
-{\list\listtemplateid17\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid17}
-{\list\listtemplateid18\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1701\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid18}
-{\list\listtemplateid19\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1801\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid19}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}{\listoverride\listid11\listoverridecount0\ls11}{\listoverride\listid12\listoverridecount0\ls12}{\listoverride\listid13\listoverridecount0\ls13}{\listoverride\listid14\listoverridecount0\ls14}{\listoverride\listid15\listoverridecount0\ls15}{\listoverride\listid16\listoverridecount0\ls16}{\listoverride\listid17\listoverridecount0\ls17}{\listoverride\listid18\listoverridecount0\ls18}{\listoverride\listid19\listoverridecount0\ls19}}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\ri720
+How to setup mac slave
+1.	Create Jenkins account
+Go to “System Preferences” -> “Users&Groups”, click “+” in left panel to create jenkins admin user
 
-\f0\fs24 \cf0 How to setup mac slave\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls1\ilvl0\cf0 1.	Create Jenkins account\
-\pard\pardeftab720\li720\ri720
-\cf0 Go to \'93System Preferences\'94 -> \'93Users&Groups\'94, click \'93+\'94 in left panel to create jenkins admin user
-\f1 \
-\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls2\ilvl0
-\f0 \cf0 2.	Enable remote desktop and remote login\
-\pard\pardeftab720\li720\ri720
-\cf0 Go to \'93System Preferences\'94 -> \'93Sharing\'94, check \'93Screen Sharing\'94 and \'93Remote Login\'94
-\f1 \
-\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls3\ilvl0
-\f0 \cf0 3.	Set automatic login and allow app downloaded from anywhere\
-\pard\pardeftab720\li720\ri720
-\cf0 Go to \'93System Preferences\'94 -> \'93Security&Privacy\'94, uncheck \'93Disable automatic login\'94 and \'93Require a password after sleep\'85\'94 and check \'93Anywhere\'94
-\f1 \
-\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls4\ilvl0
-\f0 \cf0 4.	Download and install xcode 6.1 and 5.1 from {\field{\*\fldinst{HYPERLINK "https://developer.apple.com/downloads/index.action?name=Xcode"}}{\fldrslt \cf2 \ul \ulc2 https://developer.apple.com/downloads/index.action?name=Xcode}}
-\f1 \
-\pard\pardeftab720\li720\ri720
+2.	Enable remote desktop and remote login
+Go to “System Preferences” -> “Sharing”, check “Screen Sharing” and “Remote Login”
 
-\f0 \cf0 Make sure command line tools are installed as well
-\f1 \
-\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls5\ilvl0
-\f0 \cf0 5.	Config android development environment
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls6\ilvl0
-\f2 \cf0 \'a5	
-\f0 Download and install java jdk from {\field{\*\fldinst{HYPERLINK "http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"}}{\fldrslt \cf2 \ul \ulc2 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html}}
-\f1 \
-\ls6\ilvl0
-\f2 \'a5	
-\f0 Download and install android studio {\field{\*\fldinst{HYPERLINK "%22http:"}}{\fldrslt \cf2 \ul \ulc2 http://developer.android.com/sdk/index.html}}
-\f1 \
-\ls6\ilvl0
-\f2 \'a5	
-\f0 Open android studio to install any necessary SDK tools. If \'93Android Studio was unable to find valid JVM\'94, open android info.plist and change \'93JVMVersion\'94 from 1.6* to 1.6+
-\f1 \
-\ls6\ilvl0
-\f2 \'a5	
-\f0 Download and install Android NDK from {\field{\*\fldinst{HYPERLINK "https://developer.android.com/tools/sdk/ndk/index.html"}}{\fldrslt \cf2 \ul \ulc2 https://developer.android.com/tools/sdk/ndk/index.html}}, change mode as a+w and extract
-\f1 \
-\ls6\ilvl0
-\f2 \'a5	
-\f0 Add ANDROID_HOME, ANDROID_NDK_HOME, ANDROID_NDK into environment, like
-\f1 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\li1080\ri720
+3.	Set automatic login and allow app downloaded from anywhere
+Go to “System Preferences” -> “Security&Privacy”, uncheck “Disable automatic login” and “Require a password after sleep…” and check “Anywhere”
 
-\f3 \cf3 export\cf4  PATH=\cf5 $PATH\cf6 :/Applications/sdk/platform-tools\
-\cf3 export\cf4  PATH=\cf5 $PATH\cf6 :/Applications/android-ndk-r9d\
-\cf3 export\cf4  ANDROID_HOME=\cf6 /Applications/sdk\
-\pard\pardeftab720\li1080\ri720
-\cf3 export\cf4  ANDROID_NDK_HOME=\cf6 /Applications/android-ndk-r9d
-\f1 \cf0 \
+4.	Download and install xcode 6.1 and 5.1 from https://developer.apple.com/downloads/index.action?name=Xcode
+Make sure command line tools are installed as well
 
-\f3 \cf3 export\cf4  ANDROID_NDK=\cf5 $ANDROID_NDK_HOME\
-\
-\pard\pardeftab720\li720\fi-360\ri720
-\ls7\ilvl0
-\f0 \cf0 6.	Install Homebrew and RVM
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls8\ilvl0
-\f2 \cf0 \'a5	
-\f0 Download and install home brew with
-\f1 \
-\pard\pardeftab720\li720\ri720
+5.	Config android development environment
+•	Download and install java jdk from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+•	Download and install android studio http://developer.android.com/sdk/index.html
+•	Open android studio to install any necessary SDK tools. If “Android Studio was unable to find valid JVM”, open android info.plist and change “JVMVersion” from 1.6* to 1.6+
+•	Download and install Android NDK from https://developer.android.com/tools/sdk/ndk/index.html, change mode as a+w and extract
+•	Add ANDROID_HOME, ANDROID_NDK_HOME, ANDROID_NDK into environment, like
+export PATH=$PATH:/Applications/sdk/platform-tools
+export PATH=$PATH:/Applications/android-ndk-r9d
+export ANDROID_HOME=/Applications/sdk
+export ANDROID_NDK_HOME=/Applications/android-ndk-r9d
+export ANDROID_NDK=$ANDROID_NDK_HOME
 
-\f0 \cf0 ruby -e "$(curl -fsSL {\field{\*\fldinst{HYPERLINK "https://raw.githubusercontent.com/Homebrew/install/master/install"}}{\fldrslt \cf2 \ul \ulc2 https://raw.githubusercontent.com/Homebrew/install/master/install}})"
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls9\ilvl0
-\f2 \cf0 \'a5	
-\f0 If no developer tool installed, xcode-selete \'96install
-\f1 \
-\ls9\ilvl0
-\f2 \'a5	
-\f0 Download and install rvm with 
-\f1 \
-\pard\pardeftab720\li720\ri720
+6.	Install Homebrew and RVM
+•	Download and install home brew with
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+•	If no developer tool installed, xcode-selete –install
+•	Download and install rvm with 
+\curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
+•	Get stable ruby version, 2.1.2 as required ruby version and run `rvm –default use 2.1.2` to keep 2.1.2 as default
+•	Create gemset calabash `rvm gemset create calabash`, `rvm gemset use calabash`
+•	cd wme/ta, run `bundle install` to install all necessary gem files
+•	git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git and copy scripts/junit.rb and rerun.rb to /Users/jenkins/.rvm/gems/ruby-2.1.2@calabash/gems/cucumber-1.3.18/lib/cucumber/formatter or run `gem which cucumber` to find out gem location
 
-\f4\fs21 \cf0 \\curl -L https://get.rvm.io | bash
-\f5 \cf7  
-\f4 \cf0 -s stable --rails --autolibs=enabled\
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls10\ilvl0
-\f2\fs24 \cf0 \'a5	
-\f6 Get stable ruby version, 2.1.2 as required ruby version and run `rvm \'96default use 2.1.2` to keep 2.1.2 as default
-\f4\fs21 \
-\ls10\ilvl0
-\f2\fs24 \'a5	
-\f6 Create gemset calabash `rvm gemset create calabash`, `rvm gemset use calabash`
-\f4\fs21 \
-\ls10\ilvl0
-\f2\fs24 \'a5	
-\f6 cd wme/ta, run `bundle install` to install all necessary gem files
-\f4\fs21 \
-\ls10\ilvl0
-\f2\fs24 \'a5	
-\f6 git clone {\field{\*\fldinst{HYPERLINK "mailto:git@sqbu-github.cisco.com:qianden/wme-jenkins.git"}}{\fldrslt \cf2 \ul \ulc2 git@sqbu-github.cisco.com:qianden/wme-jenkins.git}} and copy scripts/{\field{\*\fldinst{HYPERLINK "https://sqbu-github.cisco.com/qianden/wme-jenkins/blob/master/scripts/junit.rb%22%20%5Co%20%22junit.rb"}}{\fldrslt \cf2 \ul \ulc2 junit.rb}} and {\field{\*\fldinst{HYPERLINK "https://sqbu-github.cisco.com/qianden/wme-jenkins/blob/master/scripts/rerun.rb%22%20%5Co%20%22rerun.rb"}}{\fldrslt \cf2 \ul \ulc2 rerun.rb}} to /Users/jenkins/.rvm/gems/ruby-2.1.2@calabash/gems/cucumber-1.3.18/lib/cucumber/formatter or run `gem which cucumber` to find out gem location\
-\pard\pardeftab720\li1080\ri720
-\cf0 \
-\pard\pardeftab720\li720\fi-360\ri720
-\ls11\ilvl0\cf0 7.	Setup Jenkins slave environment\
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls12\ilvl0
-\f2 \cf0 \'a5	
-\f6 Create a new slave node on master and connect it\
-\ls12\ilvl0
-\f2 \'a5	
-\f0 Upload machine ssh public key to git server, `pbcopy < ~/.ssh/id_rsa.pub`
-\f1 \
-\ls12\ilvl0
-\f2 \'a5	
-\f6 \
-\ls12\ilvl0
-\f2 \'a5	
-\f6 Copy machine ssh public key to master\
-\pard\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\pardeftab720\li720\ri720
+7.	Setup Jenkins slave environment
+•	Create a new slave node on master and connect it
+•	Upload machine ssh public key to git server, `pbcopy < ~/.ssh/id_rsa.pub`
+•	
+•	Copy machine ssh public key to master
+ssh-keygen -t rsa
+cat .ssh/id_rsa.pub | ssh jenkins@10.35.132.106 'cat >> .ssh/authorized_keys'
+•	Brew install cmake, add  export PATH=/usr/local/bin:$PATH into bash_profile
+•	Brew install maven, and set JAVA_HOME as environment variable and add maven into bash_profile as well; example
+export JAVA_HOME=$(/usr/libexec/java_home)
+export M2_HOME=/usr/local/Cellar/maven/3.2.5
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+•	Brew install ant and add it into environment, example
+export ANT=/usr/local/Cellar/ant/1.9.4
+export PATH=$ANT:$PATH
+•	Brew install nasm, ln –s /usr/local/bin/nasm /usr/bin/nasm
 
-\f7\fs20 \cf0 ssh-keygen -t rsa\
-cat .ssh/id_rsa.pub | ssh jenkins@10.35.132.106 'cat >> .ssh/authorized_keys'\
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls13\ilvl0
-\f2\fs24 \cf0 \'a5	
-\f0 Brew install cmake, add  export PATH=/usr/local/bin:$PATH into bash_profile
-\f1 \
-\ls13\ilvl0
-\f2 \'a5	
-\f0 Brew install maven, and set JAVA_HOME as environment variable and add maven into bash_profile as well; example
-\f1 \
-\pard\pardeftab720\li1080\ri720
+8.	Setup debug environment
+•	Clone debug tool under Jenkins_Home/Workspace/build-all/, `git clone git@sqbu-github.cisco.com:WebExSquared/debug-tools.git`
+•	Setup debug tool python env
+Pip install python-dateutil, numpy, pymatlab, scipy, matplotlib, docutils, sphinx, treelib
 
-\f0 \cf0 export JAVA_HOME=$(/usr/libexec/java_home)
-\f1 \
-
-\f0 export M2_HOME=/usr/local/Cellar/maven/3.2.5
-\f1 \
-
-\f0 export M2=$M2_HOME/bin
-\f1 \
-
-\f0 export PATH=$M2:$PATH
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls14\ilvl0
-\f2 \cf0 \'a5	
-\f0 Brew install ant and add it into environment, example
-\f1 \
-\pard\pardeftab720\li1080\ri720
-
-\f0 \cf0 export ANT=/usr/local/Cellar/ant/1.9.4
-\f1 \
-
-\f0 export PATH=$ANT:$PATH
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls15\ilvl0
-\f2 \cf0 \'a5	
-\f0 Brew install nasm, ln \'96s /usr/local/bin/nasm /usr/bin/nasm
-\f1 \
-\pard\pardeftab720\ri720
-\cf0 \
-\pard\pardeftab720\li720\fi-360\ri720
-\ls16\ilvl0
-\f6 \cf0 8.	Setup debug environment\
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls17\ilvl0
-\f2 \cf0 \'a5	
-\f0 Clone debug tool under Jenkins_Home/Workspace/build-all/, `git clone {\field{\*\fldinst{HYPERLINK "mailto:git@sqbu-github.cisco.com:WebExSquared/debug-tools.git%60"}}{\fldrslt \cf2 \ul \ulc2 git@sqbu-github.cisco.com:WebExSquared/debug-tools.git`}}
-\f1 \
-\ls17\ilvl0
-\f2 \'a5	
-\f0 Setup debug tool python env
-\f1 \
-\pard\pardeftab720\li1080\ri720
-
-\f0 \cf0 Pip install python-dateutil, numpy
-\f1 ,
-\f0  pymatlab, scipy, matplotlib, docutils, sphinx, treelib
-\f1 \
-\pard\pardeftab720\ri720
-\cf0 \
-\pard\pardeftab720\li720\fi-360\ri720
-\ls18\ilvl0
-\f0 \cf0 9.	Setup ios dev environment
-\f1 \
-\pard\pardeftab720\li1080\fi-360\ri720
-\ls19\ilvl0
-\f2 \cf0 \'a5	
-\f0 Git clone {\field{\*\fldinst{HYPERLINK "mailto:git@sqbu-github.cisco.com:qianden/wme-jenkins.git"}}{\fldrslt \cf2 \ul \ulc2 git@sqbu-github.cisco.com:qianden/wme-jenkins.git}}
-\f1 \
-\ls19\ilvl0
-\f2 \'a5	
-\f0 Add wme-jenkins.gen-Certificates.p12 into keychain, pass: wme123PASS
-\f1 \
-\ls19\ilvl0
-\f2 \'a5	
-\f0 Add mobileprovision to connected devices\
-\ls19\ilvl0
-\f2 \'a5	
-\f0 Go to keychain access, click private key of wme-jenkins.gen dev cert, change access control as \'93allow all application to access this item\'94\
-}
+9.	Setup ios dev environment
+•	Git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git
+•	Add wme-jenkins.gen-Certificates.p12 into keychain, pass: wme123PASS
+•	Add mobileprovision to connected devices
+•	Go to keychain access, click private key of wme-jenkins.gen dev cert, change access control as “allow all application to access this item”
