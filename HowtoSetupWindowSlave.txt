@@ -19,9 +19,9 @@ Download freeSSHd from http://www.freesshd.com/?ctt=download and install
 5.	VS
 •	Download visual studio 2013 express for windows from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
 •	Download visual studio 2013 express for desktop and install 
-•	Download nasm from http://www.nasm.us/pub/nasm/releasebuilds/2.11.06/win32/ and install
-•	Download visual studio 2010 from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx and install
-
+•	Download nasm from http://www.nasm.us/pub/nasm/releasebuilds/2.11.06/win32/ and install, add nasm to system environment
+•	Download visual studio 2008 from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx and install
+•	Download afxres.h from http://sourceforge.net/p/mingw/mingw-org-wsl/ci/21762bb4a1bd0c88c38eead03f59e8d994349e83/tree/include/afxres.h, remove line27 #include <_mingw.h> and put into C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include
 6.	Setup android development environment
 •	Download jdk/jre from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and install
 •	Download Android sdk and ndk, run SDK manager to install other tools and API
@@ -34,14 +34,17 @@ set ANDROID_NDK_HOME=C:\Program Files (x86)\android-ndk-r10”
 
 7.	Ruby and WME TA env
 http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
-•	Download RubyInstaller from http://rubyinstaller.org/downloads/ and install
-•	Download rubygems from https://rubygems.org/pages/download and install
+•	Download 1.9.3 RubyInstaller (recommended as stable version) from http://rubyinstaller.org/downloads/ and install; remember to add ruby to system env, like C:\Ruby193\bin
+•	Download devkit for 1.9.3 from http://rubyinstaller.org/downloads/ and install
+•	Download rubygems from https://rubygems.org/pages/download and install; ruby gems 2.4.2 is not compatible with native gem build, run `gem update --system 2.3.0` to downgrade 
+
 8.	Python and debug tool environment
-•	Download python2.7 from https://www.python.org/downloads/release/python-279/ and install
+•	Download python2.7 and python 3.4 from https://www.python.org/downloads/ and install in order to use 2.7 as default and trigger python with py
 •	Add C:\Python27\Scripts and C:\Python27 to environment variables
 •	Setup debug tool py env
+•	Download VS python develop tool from http://www.microsoft.com/en-us/download/details.aspx?id=44266 and install 
 •	pip install python-dateutil
-•	download numpy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+•	pip install numpy; if cannot work,download numpy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
 •	download pymatlab from http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymatlab
 •	download scipy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
 •	pip install matplotlib, docutils, sphinx, treelib
@@ -51,4 +54,10 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Remember to add git path under tool chain
 •	Set usage as used by tied jobs only
 •	Recommand to use "Java Web Start" to launch windows slave
+
+10.	Setup TA env
+•	git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git under C:\Users\testbed\Jenkins_Workspace
+•	cd C:\Users\testbed\Jenkins_Workspace\build-all\wme-gitx\ta and run `bundle install`
+•	Use `gem which cucumber` to find cucumber install location and copy wme-jenkins\script\junit.rb and rerun.rb to cucumber formatter folder, like C:\Ruby193\lib\ruby\gems\1.9.1\gems\cucumber-1.3.18\lib\cucumber\formatter
+
 

@@ -33,6 +33,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 •	Create gemset calabash `rvm gemset create calabash`, `rvm gemset use calabash`
 •	cd wme/ta, run `bundle install` to install all necessary gem files
 •	git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git and copy scripts/junit.rb and rerun.rb to /Users/jenkins/.rvm/gems/ruby-2.1.2@calabash/gems/cucumber-1.3.18/lib/cucumber/formatter or run `gem which cucumber` to find out gem location
+•	gem install erubis
 
 7.	Setup Jenkins slave environment
 •	Create a new slave node on master and connect it
@@ -41,7 +42,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 •	Copy machine ssh public key to master
 ssh-keygen -t rsa
 cat .ssh/id_rsa.pub | ssh jenkins@10.35.132.106 'cat >> .ssh/authorized_keys'
-•	Brew install cmake, add  export PATH=/usr/local/bin:$PATH into bash_profile
+•	Brew install cmake, add  :q! into bash_profile
 •	Brew install maven, and set JAVA_HOME as environment variable and add maven into bash_profile as well; example
 export JAVA_HOME=$(/usr/libexec/java_home)
 export M2_HOME=/usr/local/Cellar/maven/3.2.5
@@ -62,3 +63,8 @@ Pip install python-dateutil, numpy, pymatlab, scipy, matplotlib, docutils, sphin
 •	Add wme-jenkins.gen-Certificates.p12 into keychain, pass: wme123PASS
 •	Add mobileprovision to connected devices
 •	Go to keychain access, click private key of wme-jenkins.gen dev cert, change access control as “allow all application to access this item”
+
+10.	Install ios-deploy
+https://github.com/phonegap/ios-deploy
+•	brew install node
+•	npm install -g ios-deploy
