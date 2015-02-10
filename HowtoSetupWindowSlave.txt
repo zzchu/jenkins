@@ -23,14 +23,16 @@ Download freeSSHd from http://www.freesshd.com/?ctt=download and install
 •	Download visual studio 2008 from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx and install
 •	Download afxres.h from http://sourceforge.net/p/mingw/mingw-org-wsl/ci/21762bb4a1bd0c88c38eead03f59e8d994349e83/tree/include/afxres.h, remove line27 #include <_mingw.h> and put into C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include
 6.	Setup android development environment
-•	Download jdk/jre from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and install
+•	Download jdk/jre from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and install; add JAVA_HOME to user env
 •	Download Android sdk and ndk, run SDK manager to install other tools and API
-•	add path to system environment variables, examples, 
-“set PATH=%PATH%;C:\Program Files (x86)\adt-bundle-windows-x86_64-20140702\sdk\platform-tools
- set PATH=%PATH%;C:\Program Files (x86)\android-ndk-r10
- set PATH=%PATH%;C:\Program Files (x86)\adt-bundle-windows-x86_64-20140702\sdk\tools
- set ANDROID_HOME=C:\Program Files (x86)\adt-bundle-windows-x86_64-20140702\sdk
-set ANDROID_NDK_HOME=C:\Program Files (x86)\android-ndk-r10”
+•	add path to user environment variables, examples, 
+set PATH=%PATH%;C:\Android\adt-bundle-windows-x86_64-20140702\sdk\platform-tools
+set PATH=%PATH%;C:\Android\android-ndk-r10
+set PATH=%PATH%;C:\Android\adt-bundle-windows-x86_64-20140702\sdk\tools
+set ANDROID_HOME=C:\Android\adt-bundle-windows-x86_64-20140702\sdk
+set ANDROID_NDK_HOME=C:\Android\android-ndk-r10
+set ANDROID_NDK=C:\Android\android-ndk-r10
+•	Download and install ant follow http://dita-ot.sourceforge.net/doc/ot-userguide13/xhtml/installing/windows_installingant.html
 
 7.	Ruby and WME TA env
 http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
@@ -44,9 +46,9 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Setup debug tool py env
 •	Download VS python develop tool from http://www.microsoft.com/en-us/download/details.aspx?id=44266 and install 
 •	pip install python-dateutil
-•	pip install numpy; if cannot work,download numpy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+•	pip install numpy; if cannot work,download numpy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy, get win32 version
 •	download pymatlab from http://www.lfd.uci.edu/~gohlke/pythonlibs/#pymatlab
-•	download scipy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+•	download scipy from http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy, get win32 version
 •	pip install matplotlib, docutils, sphinx, treelib
 •	write py.bat to start python.exe for windows 'start "C:\Python27" python.exe' and put it under C:\Python27
 
@@ -59,5 +61,7 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git under C:\Users\testbed\Jenkins_Workspace
 •	cd C:\Users\testbed\Jenkins_Workspace\build-all\wme-gitx\ta and run `bundle install`
 •	Use `gem which cucumber` to find cucumber install location and copy wme-jenkins\script\junit.rb and rerun.rb to cucumber formatter folder, like C:\Ruby193\lib\ruby\gems\1.9.1\gems\cucumber-1.3.18\lib\cucumber\formatter
+•	Download 7z from http://www.7-zip.org/download.html and install; add 7z path to system env
+•	gem install erubis
 
 
