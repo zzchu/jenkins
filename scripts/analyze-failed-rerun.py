@@ -27,11 +27,12 @@ rerun=int(os.environ['rerun_times'])
 linus=str(os.environ['linus_address'])
 
 while os.stat("rerun.txt").st_size != 0 and rerun>0:
-    tag=""
-    get_tag()
-    print "cucumber ta_features --tags %s --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
-    os.system("cucumber ta_features --tags %s --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
-    rerun=rerun-1
+	tag=""
+	get_tag()
+	open('rerun.txt', 'w+').close()
+	print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
+	os.system("cucumber ta_features --tags %s --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
+	rerun=rerun-1
 
 if os.stat("rerun.txt").st_size != 0: 
     tag=""
@@ -41,7 +42,7 @@ if os.stat("rerun.txt").st_size != 0:
     if not os.path.exists(failed_case_dir):
         os.mkdir(failed_case_dir)
     os.chdir(target)
-    tar_arr=tag.split(",")
+    tag_arr=tag.split(",")
     for tag in tag_arr:
         found_logs=glob.glob("*%s*"%(tag))
         for log in found_logs:
