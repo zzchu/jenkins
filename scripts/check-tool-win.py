@@ -31,5 +31,6 @@ if action=="install":
 	pipe.close()
 	cucumber_dir=os.path.dirname(cucumber_exe)
 	cucumber_fomatter_dir=os.path.join(cucumber_dir,"cucumber","formatter")
+	print "copy rerun.rb and junit.rb to cucumber"
 	shutil.copy("rerun.rb", cucumber_fomatter_dir)
 	shutil.copy("junit.rb", cucumber_fomatter_dir)
