@@ -39,3 +39,4 @@ if action=="install":
 	if not os.path.exists(build_all_dir):
 		os.mkdir(build_all_dir)
 	shutil.copy("analyze-failed.py",build_all_dir)
+	shutil.copy("analyze-failed-rerun.py",build_all_dir)
