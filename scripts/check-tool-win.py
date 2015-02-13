@@ -34,3 +34,8 @@ if action=="install":
 	print "copy rerun.rb and junit.rb to cucumber"
 	shutil.copy("rerun.rb", cucumber_fomatter_dir)
 	shutil.copy("junit.rb", cucumber_fomatter_dir)
+	print "copy ta failed cases analyze tool to build-all"
+	build_all_dir=os.path.abspath(os.path.join(os.getcwd(),"..","..","build-all"))
+	if not os.path.exists(build_all_dir):
+		os.mkdir(build_all_dir)
+	shutil.copy("analyze-failed.py",build_all_dir)
