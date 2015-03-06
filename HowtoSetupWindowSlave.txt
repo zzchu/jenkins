@@ -14,7 +14,10 @@ http://guides.beanstalkapp.com/version-control/git-on-windows.html
 
 4.	Set up ssh server
 http://www.techrepublic.com/blog/tr-dojo/set-up-a-free-ssh-server-on-windows-7-with-freesshd/
-Download freeSSHd from http://www.freesshd.com/?ctt=download and install
+•	Download freeSSHd from http://www.freesshd.com/?ctt=download and install
+•	Start SSH service
+•	Add jenkins user and choose “Public key(SSH only)” as authorization method; copy public key from jenkins master to C:\Program Files (x86)\freeSSHd and rename it as jenkins
+•	Press window+R to run “%APPDATA%” and copy FreeSSHd shortcut to Microsoft\Windows\Start Menu\Programs\Startup in order to start FreeSSHd when windows start
 
 5.	VS
 •	Download visual studio 2013 express for windows from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
@@ -56,6 +59,7 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Remember to add git path under tool chain
 •	Set usage as used by tied jobs only
 •	Recommand to use "Java Web Start" to launch windows slave
+•	Add environment pair under “Node Properties”, HOME=C:\Users\testbed
 
 10.	Setup TA env
 •	git clone git@sqbu-github.cisco.com:qianden/wme-jenkins.git under C:\Users\testbed\Jenkins_Workspace
@@ -64,4 +68,11 @@ http://socrateos.blogspot.com/2014/04/installing-ruby-193-on-my-windows-81.html
 •	Download 7z from http://www.7-zip.org/download.html and install; add 7z path to system env
 •	gem install erubis
 
+11.     Start windows slave when start
+https://wiki.jenkins-ci.org/display/JENKINS/Launch+Java+Web+Start+slave+agent+via+Windows+Scheduler
+
+12.     Enable windows camera cmd check
+•	Download and install Windows kits tool from http://www.microsoft.com/en-us/download/details.aspx?id=42273
+•	Add C:\Program Files (x86)\Windows Kits\8.1\Tools\x64 into User env variable
+•	Restart Jenkins slave agent to reload env variable
 
