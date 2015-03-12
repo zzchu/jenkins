@@ -31,7 +31,7 @@ while os.stat("rerun.txt").st_size != 0 and rerun>0:
 	get_tag()
 	open('rerun.txt', 'w+').close()
 	print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
-	os.system("cucumber ta_features --tags %s --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
+	os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
 	rerun=rerun-1
 
 if os.stat("rerun.txt").st_size != 0: 
