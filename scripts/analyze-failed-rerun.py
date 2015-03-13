@@ -36,7 +36,8 @@ def send_email(content,subject,to):
 os.chdir(wx2testfeaturepath)
 rerun=int(os.environ['rerun_times'])
 linus=str(os.environ['linus_address'])
-rerun_tags="rerun tags: "
+rerun_tags_prefix="rerun tags: "
+rerun_tags=""
 
 while os.stat("rerun.txt").st_size != 0 and rerun>0:
 	tag=""
@@ -47,9 +48,12 @@ while os.stat("rerun.txt").st_size != 0 and rerun>0:
 	rerun=rerun-1
 	rerun_tags+=tag+","
 
-bld_num=os.environ['parent_project']+os.environ['BUILD_NUMBER']
-subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
-send_email(rerun_tags[:-1], subject, "wme-buildpipeline-scrum@cisco.com")
+if rerun_tags:
+    bld_num=os.environ['parent_project']+os.environ['parent_build_number']
+    subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
+    content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags[:-1],os.environ['BUILD_URL'])
+    send_email(content, subject, "wme-buildpipeline-scrum@cisco.com")
+    #send_email(content, subject, "qianden@cisco.com")
 	
 if os.stat("rerun.txt").st_size != 0: 
     tag=""
