@@ -35,7 +35,7 @@ def send_email(content,subject,to):
     
 os.chdir(wx2testfeaturepath)
 rerun=int(os.environ['rerun_times'])
-linus=str(os.environ['linus_address'])
+linus=str(os.environ['win_linus_address'])
 rerun_tags_prefix="rerun tags: "
 rerun_tags=""
 
