@@ -53,21 +53,25 @@ class Android():
         list_dev_cmd=self.adb_location + " devices"
         android_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
         self.udid_ls=re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
+        return len(self.udid_ls)
 
     def print_udid(self):
-        if(len(self.udid_ls)>0):
+        if len(self.udid_ls)>0:
             for id in self.udid_ls:
                 print id
                 
     def reboot(self):
-        print "Rebooting android..."
-        for id in self.udid_ls:
-            reboot_cmd="%s -s %s reboot"%(self.adb_location,id)
-            subprocess.call(reboot_cmd, shell=True)
-            print "Rebooted device %s"%(id)
-        print "Going to sleep 45 seconds and wait for android back ..."
-        time.sleep(45)
-        print "Done waiting for android reboot"
+        if len(self.udid_ls)>0:
+            print "Rebooting android..."
+            for id in self.udid_ls:
+                reboot_cmd="%s -s %s reboot"%(self.adb_location,id)
+                subprocess.call(reboot_cmd, shell=True)
+                print "Rebooted device %s"%(id)
+            print "Going to sleep 45 seconds and wait for android back ..."
+            time.sleep(45)
+            print "Done waiting for android reboot"
+        else:
+            print "No android devices connected"
     
     def capture_ip(self):
         found_ip=True
@@ -102,65 +106,96 @@ class Android():
             return False    
         return self.capture_ip()
 
+
 class Ios():
     def __init__(self):
-        check_iosdeploy_cmd="ios-deploy --version"
+        check_iosdeploy_cmd="sh ios-deploy.sh version"
         res=subprocess.check_output(check_iosdeploy_cmd, shell=True)
         if not res:
             raise Exception("ios-deploy is not installed correctly")
         self.udid_ls=[]
 
     def capture_udid(self):
-        list_dev_cmd="ios-deploy -c"
+        list_dev_cmd="sh ios-deploy.sh list"
         ios_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
-        self.udid_ls=re.findall('.*\(([a-zA-Z0-9]+)\) connected through USB$',ios_devices,flags=re.MULTILINE)
+        self.udid_ls=re.findall('.* Found.*\(([a-zA-Z0-9]+)\) connected through USB.$',ios_devices,flags=re.MULTILINE)
+        return len(self.udid_ls)
     
     def print_udid(self):
         if(len(self.udid_ls)>0):
             for id in self.udid_ls:
                 print id
 
-    def obtain_ip(self):
-        cmd = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "build_scripts/get_ios_ip.sh")
-        # This returns array of 'bytes'
-        ip = subprocess.check_output(
-            cmd,
-            shell=True).strip()
-        ip = ip.decode('utf-8')
-        LOGGER.info("Found iPhone/Pad IP address of '%s'" % (ip,))
-        if not is_valid_ipv4(ip):
-            LOGGER.error("Failed to find the ip address of the iphone - found '%s'" % (ip))
-        self.phone_ip = ip
-        return ip
+    def install_test_app(self):
+        for id in self.udid_ls:
+            install_cmd="sh ios-deploy.sh install %s MediaSessionIntegrationTest.app"%id
+            res = subprocess.check_output(install_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
+            print res
 
-    def get_ip(self):
-        return self.phone_ip
+    def obtain_ip(self):
+        found_ip=True
+        for id in self.udid_ls:
+            cmd = "sh ios_uiautomation.sh %s ip getip.js" % id
+            # This returns array of 'bytes'
+            ip = subprocess.check_output(
+                cmd,
+                shell=True).strip()
+            #ip = ip.decode('utf-8')
+            if ip:
+                print "%s Found IP address: %s" % (id,ip)
+            else:
+                print "%s CANNOT find IP address" % id
+                found_ip=False
+        return found_ip
+
+    def unlock(self):
+        for id in self.udid_ls:
+            cmd = "sh ios_uiautomation.sh %s unlock unlock.js" % id
+            res = subprocess.check_output(
+                 cmd,
+                 shell=True).strip()
+            print res
 
     def reboot(self):
         print "Rebooting iphone..."
-        self.run_blocking(
-            "bundle exec restart_device.rb",
-            shell=True,
-            working_dir=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "ios"))
+        subprocess.call(
+            "ruby restart_device.rb",
+            shell=True)
+        print "Sleep 45 seconds to wait ios back"
         time.sleep(45)
         print "Done waiting for ios reboot"
+        ios.install_test_app()
+        self.unlock()
+        return self.obtain_ip()
+
+
 
 if __name__ == '__main__':
     try:
         android=Android()
-        android.capture_udid()
-        #android.print_udid()
-        #android.capture_ip()
-        android.reboot()
-        if android.restart_adb() :
-            print "SUCCESS, all android devices restart!"
+        num=android.capture_udid()
+        if num>0: 
+            android.reboot()
+            if android.restart_adb():
+                print "SUCCESS, all android devices restart!"
+            else:
+                print "FAILED, some android devices not back, please check"
         else:
-            print "FAILED, some android devices not back, please check"
+            print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
     try:
         ios=Ios()
-        ios.capture_udid()
-        ios.print_udid()
-    except Exception.e:
+        num=ios.capture_udid()
+        if num>0:
+            #ios.print_udid()
+            #ios.install_test_app()
+            #ios.obtain_ip()
+            if ios.reboot():
+                print "SUCCESS, all ios devices restart!"
+            else:
+                print "FAILED, some ios devices not back, please check"
+        else:
+            print "No ios devices connected"
+    except Exception,e:
         print "Error: " + str(e)
