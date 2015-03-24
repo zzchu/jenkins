@@ -89,17 +89,18 @@ class Android():
     def restart_adb(self):
         # kill and restart the adb server
         restart_adb_cmd = self.adb_location + " kill-server"
-        print restart_adb_cmd
-        res = subprocess.check_output(restart_adb_cmd, shell=True)
-        print res
-        time.sleep(4)
         start_adb_cmd = self.adb_location + " devices"
-        print start_adb_cmd
         lines = []
         restart_adb_count = 0
-        while restart_adb_count < 40 and len(lines)<len(self.udid_ls)+1:
+        while restart_adb_count < 40 and len(lines)<len(self.udid_ls):
+            print restart_adb_cmd
+            res = subprocess.check_output(restart_adb_cmd, shell=True)
+            print res
+            time.sleep(4)
+            print start_adb_cmd
             android_devices = subprocess.check_output(start_adb_cmd, shell=True, universal_newlines=True).strip()
-            lines = android_devices.splitlines()
+            print android_devices
+            lines = re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
             restart_adb_count += 1
         if restart_adb_count == 40:
             print "Unable to restart the adb server and find attached device"
@@ -184,6 +185,7 @@ if __name__ == '__main__':
             print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
+        
     try:
         ios=Ios()
         num=ios.capture_udid()
