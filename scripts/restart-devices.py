@@ -50,9 +50,21 @@ class Android():
         self.udid_ls=[]
 
     def capture_udid(self):
+        restart_adb_count = 0
+        restart_adb_cmd = self.adb_location + " kill-server"
         list_dev_cmd=self.adb_location + " devices"
+        print list_dev_cmd
         android_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
         self.udid_ls=re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
+        while restart_adb_count < 3 and len(self.udid_ls)==0:
+            print restart_adb_cmd
+            res = subprocess.check_output(restart_adb_cmd, shell=True)
+            print res
+            print list_dev_cmd
+            android_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
+            print android_devices
+            self.udid_ls=re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
+            restart_adb_count += 1
         return len(self.udid_ls)
 
     def print_udid(self):
@@ -166,8 +178,9 @@ class Ios():
         time.sleep(45)
         print "Done waiting for ios reboot"
         ios.install_test_app()
-        self.unlock()
-        return self.obtain_ip()
+        #self.unlock()
+        #return self.obtain_ip()
+        return True
 
 
 
@@ -185,7 +198,7 @@ if __name__ == '__main__':
             print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
-        
+     
     try:
         ios=Ios()
         num=ios.capture_udid()
