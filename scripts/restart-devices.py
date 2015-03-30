@@ -1,4 +1,4 @@
-#!/usr/bin/env python -h
+#!/usr/bin/env python -u
 
 import time
 import uuid
