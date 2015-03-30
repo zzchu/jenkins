@@ -1,9 +1,13 @@
+#!/usr/bin/env python -h
+
 import time
 import uuid
 import os
 import sys
 import subprocess
 import re
+
+sys.stdout.flush()
 
 class Process():
     def __init__(self):
