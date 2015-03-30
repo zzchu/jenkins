@@ -5,5 +5,5 @@ if [ "$1" = "list" ];then
    ios-deploy -c
 fi
 if [ "$1" = "install" ];then
-   ios-deploy --id $2 --bundle $3
+   ios-deploy -r --id $2 --bundle $3
 fi 
