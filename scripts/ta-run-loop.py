@@ -1,4 +1,4 @@
-mport os,glob,errno,sys
+import os,glob,errno,sys
 import shutil,stat
 import distutils.core
 import pdb

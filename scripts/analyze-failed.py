@@ -3,7 +3,7 @@ import shutil,stat
 import distutils.core
 import pdb
 
-wmepath=os.path.abspath(os.path.join(os.environ['WORKSPACE'], "..", "..", os.environ['repo_loc'], os.environ['wme_loc']))
+wmepath=os.path.abspath(os.path.join(os.environ['WORKSPACE'], os.environ['repo_loc'], os.environ['wme_loc']))
 wx2testpath=os.path.join(wmepath,"ta")
 
 #Collect failed case trace
