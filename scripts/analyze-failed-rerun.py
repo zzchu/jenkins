@@ -71,7 +71,7 @@ if os.stat("rerun.txt").st_size != 0:
     #pdb.set_trace()
     #Analyze failed cases logs
     os.chdir(wx2testfeaturepath)
-    python_script=os.path.abspath(os.path.join(os.environ['WORKSPACE'], "..", "..", os.environ['repo_loc'],"debug-tools","calling","wme","logtool","wmeparse.py"))
+    python_script=os.path.abspath(os.path.join(os.environ['WORKSPACE'],os.environ['repo_loc'],"debug-tools","calling","wme","logtool","wmeparse.py"))
     os.system("py %s %s"%(python_script,failed_case_dir))
     report_dir=os.path.join(wx2testpath,"ref-app","trace","wme_result")
     os.chdir(failed_case_dir)
