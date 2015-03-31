@@ -5,7 +5,7 @@ import pdb
 import smtplib
 from email.mime.text import MIMEText
 
-wmepath=os.path.abspath(os.path.join(os.environ['WORKSPACE'], "..", "..", os.environ['repo_loc'], os.environ['wme_loc']))
+wmepath=os.path.abspath(os.path.join(os.environ['WORKSPACE'], os.environ['repo_loc'], os.environ['wme_loc']))
 wx2testpath=os.path.join(wmepath,"ta")
 wx2testfeaturepath=os.path.join(wx2testpath, "ref-app")
 
