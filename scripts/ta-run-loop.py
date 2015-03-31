@@ -15,9 +15,11 @@ linus=str(os.environ['linus_address'])
 count=loop-1
 tag=str(os.environ['ta_tags'])
 
+print "Count %s"%loop
 print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
 os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
 while os.stat("rerun.txt").st_size == 0 and count>0:
+	print "Count %s"%count
 	print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
 	os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
 	count=count-1
