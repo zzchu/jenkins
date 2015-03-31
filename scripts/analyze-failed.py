@@ -11,7 +11,7 @@ os.chdir(os.path.join(wx2testpath, "ref-app"))
 with open ("rerun.txt", "r") as myfile:
     data=myfile.read().replace('\n', '').split(' ')
 if not data[0]:
-    print "no failed case, exit"
+    print "[INFO] no failed case, exit"
     sys.exit(0)
 
 

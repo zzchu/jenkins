@@ -17,12 +17,12 @@ def get_tag():
     with open ("rerun.txt", "r") as myfile:
         data=myfile.read().replace('\n', '').split(' ')
     if not data[0]:
-        print "no failed case, exit"
+        print "[INFO] no failed case, exit"
         return  
     for item in data:
         tag=item.split(":")[-1]+","+tag
     tag=tag[:-1]
-    print tag
+    print "[INFO] %s"%tag
 	
 def send_email(content,subject,to):
 	msg=MIMEText(content)
@@ -43,7 +43,7 @@ while os.stat("rerun.txt").st_size != 0 and rerun>0:
 	tag=""
 	get_tag()
 	open('rerun.txt', 'w+').close()
-	print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
+	print "[INFO] cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
 	os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
 	rerun=rerun-1
 	rerun_tags+=tag+","
