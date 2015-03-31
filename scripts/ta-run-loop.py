@@ -12,14 +12,14 @@ wx2testfeaturepath=os.path.join(wx2testpath, "ref-app")
 os.chdir(wx2testfeaturepath)
 loop=int(os.environ['loop'])
 linus=str(os.environ['linus_address'])
-count=loop-1
+count=1
 tag=str(os.environ['ta_tags'])
 
-print "Count %s"%loop
-print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
+print "[INFO] LOOP RUN %s"%count
+print "[INFO] cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
 os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
-while os.stat("rerun.txt").st_size == 0 and count>0:
-	print "Count %s"%count
-	print "cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
+while os.stat("rerun.txt").st_size == 0 and count<loop:
+	count=count+1
+	print "[INFO] Loop RUN %s"%count
+	print "[INFO] cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
 	os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
-	count=count-1
