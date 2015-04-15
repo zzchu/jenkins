@@ -30,14 +30,16 @@ def check_ruby():
 		cucumber_exe=read_command_output("gem which cucumber")
 		cucumber_dir=os.path.dirname(cucumber_exe)
 		cucumber_fomatter_dir=os.path.join(cucumber_dir,"cucumber","formatter")
-		print "copy rerun.rb and junit.rb to cucumber"
+		print "copy rerun.rb and junit.rb to cucumber %s"%cucumber_fomatter_dir
 		shutil.copy("rerun.rb", cucumber_fomatter_dir)
 		shutil.copy("junit.rb", cucumber_fomatter_dir)
+		'''
 		print "copy ta failed cases analyze tool to build-all"
 		build_all_dir=os.path.abspath(os.path.join(os.getcwd(),"..","..","build-all"))
 		if not os.path.exists(build_all_dir):
 			os.mkdir(build_all_dir)
 		shutil.copy("analyze-failed.py",build_all_dir)
 		shutil.copy("analyze-failed-rerun.py",build_all_dir)
+		'''
 
 check_ruby()
