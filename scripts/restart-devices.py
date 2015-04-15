@@ -133,9 +133,14 @@ class Ios():
         self.udid_ls=[]
 
     def capture_udid(self):
-        list_dev_cmd="sh ios-deploy.sh list"
-        ios_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
-        self.udid_ls=re.findall('.* Found.*\(([a-zA-Z0-9]+)\) connected through USB.$',ios_devices,flags=re.MULTILINE)
+        #list_dev_cmd="sh ios-deploy.sh list"
+        #ios_devices = subprocess.check_output(list_dev_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
+        #self.udid_ls=re.findall('.* Found.*\(([a-zA-Z0-9]+)\) connected through USB.$',ios_devices,flags=re.MULTILINE)
+        get_ios_dev_num_cmd="ruby caputre_device.rb"
+        res=subprocess.check_output(get_ios_dev_num_cmd, shell=True)
+        with open ("ios_id", "r") as myfile:
+            data=myfile.read().replace('\n', '')
+        self.udid_ls=data.split(",")
         return len(self.udid_ls)
     
     def print_udid(self):
@@ -145,6 +150,7 @@ class Ios():
 
     def install_test_app(self):
         for id in self.udid_ls:
+            print "Install test app for %s" %id
             install_cmd="sh ios-deploy.sh install %s MediaSessionIntegrationTest.app"%id
             res = subprocess.check_output(install_cmd, stderr=subprocess.STDOUT, shell=True, universal_newlines=True).strip()
             print res
@@ -202,7 +208,7 @@ if __name__ == '__main__':
             print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
-     
+
     try:
         ios=Ios()
         num=ios.capture_udid()
