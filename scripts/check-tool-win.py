@@ -1,10 +1,10 @@
 import os,sys
 import shutil
 
-nodelist=os.environ['nodelist']
+#nodelist=os.environ['nodelist']
 print os.getcwd()
-if os.environ['NODE_NAME'] not in nodelist:
-	sys.exit()
+#if os.environ['NODE_NAME'] not in nodelist:
+#	sys.exit()
 
 def read_command_output(command):
 	pipe=os.popen(command)
