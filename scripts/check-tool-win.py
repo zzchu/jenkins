@@ -26,7 +26,7 @@ def check_ruby():
 
 	action=os.environ['action']
 	if action=="install":
-		os.system("gem install -aIx cucumber")
+		os.system("gem uninstall -aIx cucumber")
 		os.system("gem install cucumber -v 1.3.18")
 		cucumber_exe=read_command_output("gem which cucumber")
 		cucumber_dir=os.path.dirname(cucumber_exe)
