@@ -12,17 +12,19 @@ wx2testfeaturepath=os.path.join(wx2testpath, "ref-app")
 tag=""
 def get_tag():
     global tag
+    tag=""
     #Collect failed case trace
     os.chdir(wx2testfeaturepath)
     with open ("rerun.txt", "r") as myfile:
         data=myfile.read().replace('\n', '').split(' ')
     if not data[0]:
         print "[INFO] no failed case, exit"
+        custome_email()
         return  
     for item in data:
         tag=item.split(":")[-1]+","+tag
     tag=tag[:-1]
-    print "[INFO] %s"%tag
+    print "[INFO] Failed tags: %s"%tag
 	
 def send_email(content,subject,to):
 	msg=MIMEText(content)
@@ -34,30 +36,53 @@ def send_email(content,subject,to):
 	s.quit()
     
 os.chdir(wx2testfeaturepath)
-rerun=int(os.environ['rerun_times'])
+count=rerun=int(os.environ['rerun_times'])
 linus=str(os.environ['win_linus_address'])
 rerun_tags_prefix="rerun tags: "
 rerun_tags=""
+base_tag_ls=[]
+unstable_tag_ls=[]
 
-while os.stat("rerun.txt").st_size != 0 and rerun>0:
-	tag=""
-	get_tag()
-	open('rerun.txt', 'w+').close()
-	print "[INFO] cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
-	os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
-	rerun=rerun-1
-	rerun_tags+=tag+","
+def find_unstable_tag():
+    global tag
+    global unstable_tag_ls,base_tag_ls
+    after_rerun_ls=tag.split(",")
+    if(len(after_rerun_ls)>0):
+        for item in base_tag_ls:
+            if item not in after_rerun_ls:
+                unstable_tag_ls.append(item)
 
-if rerun_tags:
-    print "Sending email to inform %s tags been rerun"%rerun_tags
-    bld_num=os.environ['parent_project']+os.environ['parent_build_number']
-    subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
-    content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags[:-1],os.environ['BUILD_URL'])
-    send_email(content, subject, "wme-buildpipeline-scrum@cisco.com")
+def custome_email():
+    global unstable_tag_ls
+    unstable_tag_set=set(unstable_tag_ls)
+    if len(unstable_tag_set)>0:
+        join_str=","
+        rerun_tags=join_str.join(unstable_tag_set)
+        print "Sending email to inform %s are unstable tags"%rerun_tags
+        bld_num=os.environ['parent_project']+os.environ['parent_build_number']
+        subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
+        content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags[:-1],os.environ['BUILD_URL'])
+        send_email(content, subject, "wme-buildpipeline-scrum@cisco.com")
     #send_email(content, subject, "qianden@cisco.com")
+
+while os.stat("rerun.txt").st_size != 0 and count>0:
+    get_tag()
+    #before first rerun, read all failed tags into a base list
+    if count==rerun:
+        base_tag_ls=tag.split(",")
+    else:
+        find_unstable_tag()
+    open('rerun.txt', 'w+').close()
+    print "[INFO] cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit"%tag
+    os.system("cucumber ta_features --tags %s --tags @sanity --format pretty --format json --out report.json --format rerun --out rerun.txt --format junit --out junit LINUS_SERVER=%s"%(tag,linus))
+	#rerun_tags+=tag+","
+    count=count-1
+
+get_tag()
+find_unstable_tag()
+custome_email()
 	
 if os.stat("rerun.txt").st_size != 0: 
-    tag=""
     get_tag()
     target=max(glob.glob("trace/*/"), key=os.path.getmtime)
     failed_case_dir=os.path.join(os.getcwd(), "trace", "failed_case_trace")
