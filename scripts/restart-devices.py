@@ -188,7 +188,6 @@ class Ios():
         time.sleep(45)
         print "Done waiting for ios reboot"
         res=ios.install_test_app()
-        print res
         #self.unlock()
         #return self.obtain_ip()
         return True
