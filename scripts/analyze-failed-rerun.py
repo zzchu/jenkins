@@ -49,7 +49,7 @@ while os.stat("rerun.txt").st_size != 0 and rerun>0:
 	rerun_tags+=tag+","
 
 if rerun_tags:
-    print “Sending email to inform %s tags been rerun”%rerun_tags
+    print "Sending email to inform %s tags been rerun"%rerun_tags
     bld_num=os.environ['parent_project']+os.environ['parent_build_number']
     subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
     content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags[:-1],os.environ['BUILD_URL'])
