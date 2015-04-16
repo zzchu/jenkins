@@ -187,7 +187,8 @@ class Ios():
         print "Sleep 45 seconds to wait ios back"
         time.sleep(45)
         print "Done waiting for ios reboot"
-        ios.install_test_app()
+        res=ios.install_test_app()
+        print res
         #self.unlock()
         #return self.obtain_ip()
         return True
