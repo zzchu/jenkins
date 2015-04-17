@@ -61,7 +61,7 @@ def custome_email():
         print "Sending email to inform %s are unstable tags"%rerun_tags
         bld_num=os.environ['parent_project']+os.environ['parent_build_number']
         subject="[Jenkins Alert] Attention: WIN TA rerun tags for build %s"%bld_num
-        content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags[:-1],os.environ['BUILD_URL'])
+        content="%s%s\n%s"%(rerun_tags_prefix,rerun_tags,os.environ['BUILD_URL'])
         send_email(content, subject, "wme-buildpipeline-scrum@cisco.com")
     #send_email(content, subject, "qianden@cisco.com")
 
