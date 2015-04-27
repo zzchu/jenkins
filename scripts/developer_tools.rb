@@ -15,9 +15,13 @@ def update_developer_certificates(cert_name, cert_path, password)
 end
 
 def update_provisioning_profile(profile_path, profile_uuid)
+
   profile_dir = File.expand_path("~/Library/MobileDevice/Provisioning Profiles")
+  #remove the old provision
+  #FileUtils.rm_rf profile_dir
   FileUtils.mkdir_p profile_dir
   profile_path = File.expand_path(profile_path)
+
   install_path = "#{profile_dir}/#{profile_uuid}.mobileprovision"
   $stdout.puts "Installing #{profile_path} to #{install_path}"
   FileUtils.cp profile_path, install_path
@@ -49,3 +53,5 @@ else
   update_developer_certificates(cert_name, cert_path, password)
   update_provisioning_profile(profile_path, profile_uuid)
 end
+
+exit 0
