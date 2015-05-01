@@ -38,5 +38,5 @@ end tell
 -- Give time for Instruments to launch and run and hopefully communicate with the iphone
 delay 10
 
-tell application "Instruments" to quit
-tell application "Xcode" to quit
+-- tell application "Instruments" to quit
+-- tell application "Xcode" to quit
