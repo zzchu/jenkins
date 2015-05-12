@@ -210,7 +210,6 @@ if __name__ == '__main__':
             print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
-        error+=1
 
     try:
         ios=Ios()
@@ -228,5 +227,5 @@ if __name__ == '__main__':
             print "No ios devices connected"
     except Exception,e:
         print "Error: " + str(e)
-        error+=2
+        
     sys.exit(error)
