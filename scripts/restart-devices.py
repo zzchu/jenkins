@@ -108,7 +108,7 @@ class Android():
         start_adb_cmd = self.adb_location + " devices"
         lines = []
         restart_adb_count = 0
-        while restart_adb_count < 40 and len(lines)<len(self.udid_ls):
+        while restart_adb_count < 15 and len(lines)<len(self.udid_ls):
             print restart_adb_cmd
             res = subprocess.check_output(restart_adb_cmd, shell=True)
             print res
@@ -118,7 +118,7 @@ class Android():
             print android_devices
             lines = re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
             restart_adb_count += 1
-        if restart_adb_count == 40:
+        if restart_adb_count == 15:
             print "Unable to restart the adb server and find attached device"
             return False    
         return self.capture_ip()
