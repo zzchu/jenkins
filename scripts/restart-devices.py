@@ -195,6 +195,7 @@ class Ios():
 
 
 if __name__ == '__main__':
+    error=0
     try:
         android=Android()
         num=android.capture_udid()
@@ -204,10 +205,12 @@ if __name__ == '__main__':
                 print "SUCCESS, all android devices restart!"
             else:
                 print "FAILED, some android devices not back, please check"
+                error+=1
         else:
             print "No android devices connected"
     except Exception,e:
         print "Error: " + str(e)
+        error+=1
 
     try:
         ios=Ios()
@@ -220,7 +223,10 @@ if __name__ == '__main__':
                 print "SUCCESS, all ios devices restart!"
             else:
                 print "FAILED, some ios devices not back, please check"
+                error+=2
         else:
             print "No ios devices connected"
     except Exception,e:
         print "Error: " + str(e)
+        error+=2
+    sys.exit(error)
