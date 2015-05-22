@@ -108,7 +108,7 @@ class Android():
         start_adb_cmd = self.adb_location + " devices"
         lines = []
         restart_adb_count = 0
-        while restart_adb_count < 40 and len(lines)<len(self.udid_ls):
+        while restart_adb_count < 15 and len(lines)<len(self.udid_ls):
             print restart_adb_cmd
             res = subprocess.check_output(restart_adb_cmd, shell=True)
             print res
@@ -118,7 +118,7 @@ class Android():
             print android_devices
             lines = re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
             restart_adb_count += 1
-        if restart_adb_count == 40:
+        if restart_adb_count == 15:
             print "Unable to restart the adb server and find attached device"
             return False    
         return self.capture_ip()
@@ -195,6 +195,7 @@ class Ios():
 
 
 if __name__ == '__main__':
+    error=0
     try:
         android=Android()
         num=android.capture_udid()
@@ -204,6 +205,7 @@ if __name__ == '__main__':
                 print "SUCCESS, all android devices restart!"
             else:
                 print "FAILED, some android devices not back, please check"
+                error+=1
         else:
             print "No android devices connected"
     except Exception,e:
@@ -220,7 +222,10 @@ if __name__ == '__main__':
                 print "SUCCESS, all ios devices restart!"
             else:
                 print "FAILED, some ios devices not back, please check"
+                error+=2
         else:
             print "No ios devices connected"
     except Exception,e:
         print "Error: " + str(e)
+        
+    sys.exit(error)
