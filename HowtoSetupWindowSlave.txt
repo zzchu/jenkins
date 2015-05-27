@@ -25,6 +25,7 @@ http://www.techrepublic.com/blog/tr-dojo/set-up-a-free-ssh-server-on-windows-7-w
 •	Download nasm from http://www.nasm.us/pub/nasm/releasebuilds/2.11.06/win32/ and install, add nasm to system environment
 •	Download visual studio 2008 from http://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx and install
 •	Download afxres.h from http://sourceforge.net/p/mingw/mingw-org-wsl/ci/21762bb4a1bd0c88c38eead03f59e8d994349e83/tree/include/afxres.h, remove line27 #include <_mingw.h> and put into C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include
+
 6.	Setup android development environment
 •	Download jdk/jre from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and install; add JAVA_HOME to user env
 •	Download Android sdk and ndk, run SDK manager to install other tools and API
