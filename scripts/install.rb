@@ -65,6 +65,7 @@ update_developer_certificates('iPhone Developer: wme-jenkins gen (26CW9V38S8)', 
 
 # Installing Development Profiles
 update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_spark_profile.mobileprovision", "56d578a0-aad6-49b5-831d-281881fe0b51")
+update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_profile.mobileprovision", "bc1fd10a-0282-472e-aebe-cb364d2ac5b1")
 
 # Installing Distribution Profiles, certificates are also required.
 update_provisioning_profile("#{self_dir}/profiles/SquaredAppStore.mobileprovision", "a58982b8-0569-4bec-8db2-25188ff71714")
