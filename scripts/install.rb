@@ -64,8 +64,8 @@ self_dir = File.expand_path(File.dirname(__FILE__))
 update_developer_certificates('iPhone Developer: wme-jenkins gen (26CW9V38S8)', "#{self_dir}/certs/wme-jenkins.gen-Certificates.p12", options[:password])
 
 # Installing Development Profiles
-update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_spark_profile.mobileprovision", "4d3cecd7-08cd-4f32-847c-0f9941dd2b50")
-update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_profile.mobileprovision", "bc1fd10a-0282-472e-aebe-cb364d2ac5b1")
+update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_spark_profile.mobileprovision", "acfa1083-0385-44fb-9dc4-432812ef3319")
+update_provisioning_profile("#{self_dir}/profiles/WMEJenkinsgen_profile.mobileprovision", "709f5de6-d5b5-461b-955a-f23f4e6bee4f")
 
 # Installing Distribution Profiles, certificates are also required.
 update_provisioning_profile("#{self_dir}/profiles/SquaredAppStore.mobileprovision", "a58982b8-0569-4bec-8db2-25188ff71714")
