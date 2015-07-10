@@ -118,7 +118,7 @@ class Android():
             print android_devices
             lines = re.findall('([a-zA-Z0-9]+).*device$',android_devices,flags=re.MULTILINE)
             restart_adb_count += 1
-        if restart_adb_count == 15:
+        if restart_adb_count == 15 and len(lines)<len(self.udid_ls):
             print "Unable to restart the adb server and find attached device"
             return False    
         return self.capture_ip()
