@@ -12,7 +12,7 @@ def run(command):
     return out
 
 ENV = {
-  "integration" : "https://wme-jenkins.gen:a3b36d7597d1688d85073a0a873de731@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/calliope-linus-deploy-prod/"
+  "integration" : "https://wme-jenkins.gen:a3b36d7597d1688d85073a0a873de731@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/publish%20to%20repo/"
 }
 
 def linus_install_rpm(rpm_file, build_number):
