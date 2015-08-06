@@ -11,8 +11,9 @@ def run(command):
     (out, err) = proc.communicate()
     return out
 
+gen_pass="8f083344f3c2cb6800f273bc1a000701"
 ENV = {
-  "integration" : "https://wme-jenkins.gen:a3b36d7597d1688d85073a0a873de731@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/publish%20to%20repo/"
+  "integration" : "https://wme-jenkins.gen:%s@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/publish%20to%20repo/"%gen_pass
 }
 
 def linus_install_rpm(rpm_file, build_number):
@@ -46,5 +47,5 @@ args = parser.parse_args()
 if args.bldNum == "none":
     check_install_rpm()
 else:
-    ENV["integration2"]="https://wme-jenkins.gen:a3b36d7597d1688d85073a0a873de731@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/%s/"%args.bldNum
+    ENV["integration2"]="https://wme-jenkins.gen:%s@sqbu-jenkins.cisco.com:8443/view/Calliope/job/calliope-linus/%s/"%(gen_pass,args.bldNum)
     check_install_rpm("integration2")
