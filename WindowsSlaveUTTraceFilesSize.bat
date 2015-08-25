@@ -1,7 +1,7 @@
 @echo off
 set WorkingDir=%cd%
-set RegisterFile64=C:/64RegApp.reg
-set RegisterFile32=C:/32ResApp.reg
+set RegisterFile64=64RegApp.reg
+set RegisterFile32=32ResApp.reg
 set RegisterFile=%RegisterFile64%
 
 rem for 64 reg 
