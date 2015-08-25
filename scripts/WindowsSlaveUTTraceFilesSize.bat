@@ -23,6 +23,11 @@ rem call regedit.exe and change seting for trace file size
 echo WorkingDir is %WorkingDir%
 echo RegisterFile is %RegisterFile%
 regedit %WorkingDir%/%RegisterFile% 
+
+set RegisterFile=%RegisterFile32%
+echo WorkingDir is %WorkingDir%
+echo RegisterFile is %RegisterFile%
+regedit %WorkingDir%/%RegisterFile% 
 pause
 
 
